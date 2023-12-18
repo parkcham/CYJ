@@ -68,7 +68,6 @@ const DdayScreen = () => {
     setRefreshing(false);
   };
   const onEndReached = async () => {
-    console.log("onEndReached");
     if (noMoreDday || !day || day.length < limit) {
       return;
     }
@@ -101,7 +100,7 @@ const DdayScreen = () => {
           )}
           // bounces={false}
           onEndReached={onEndReached}
-          onEndReachedThreshold={0.2}
+          onEndReachedThreshold={0.1}
           refreshControl={
             <RefreshControl
               tintColor={"pink"}

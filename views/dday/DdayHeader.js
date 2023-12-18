@@ -37,7 +37,7 @@ const DdayHeader = ({ scrollY, day }) => {
   });
   const dayColor = scrollY.interpolate({
     inputRange: [0, HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT],
-    outputRange: ["white", "pink"],
+    outputRange: ["#545454", "pink"],
     extrapolate: "clamp",
   });
 
@@ -49,7 +49,7 @@ const DdayHeader = ({ scrollY, day }) => {
     >
       <ImageBackground
         style={styles.image}
-        source={require("../../assets/DdayDefault.jpg")}
+        source={require("../../assets/test.jpg")}
       >
         <View style={styles.dateView}>
           <AntDesign name="heart" size={24} color="#FF4848" />

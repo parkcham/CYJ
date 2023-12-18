@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Ionicons, Octicons, AntDesign } from "@expo/vector-icons";
 import BottomModal from "../components/BottomModal";
 
-const TabUpload = () => {
+const TabButton = () => {
   const insets = useSafeAreaInsets();
   const navigation = useNavigation();
   const [isModalVisible, setModalVisible] = useState(false);
@@ -166,4 +166,4 @@ const styles = StyleSheet.create({
     paddingLeft: 22,
   },
 });
-export default TabUpload;
+export default TabButton;

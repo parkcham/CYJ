@@ -22,24 +22,8 @@ export default function useDiaryScreen() {
     [diarys]
   );
 
-  // const updateDiary = useCallback(
-  //   ({ id, title,detail} ) => {
-  //     const nextDiarys = diarys.map((diary) =>
-  //       diary.id === id
-  //         ? {
-  //             ...diary,
-  //             title,
-  //             detail
-  //           }
-  //         : diary
-  //     );
-  //     setDiarys(nextDiarys);
-  //   },
-  //   [diarys]
-  // );
   const getDiary = (limit) => {
     getContent({ collection: "Diarys", limit: limit }).then(setDiarys);
-    console.log("가져와유")
   }
   const updateDiary = useCallback(
     ({ id, data} ) => {
@@ -84,23 +68,6 @@ export default function useDiaryScreen() {
     getDiary()
     setRefreshing(false)
   }
-  // const onRefresh = useCallback(async () => {
-  //   console.log("refresh");
-  //   if (!diarys || diarys.length === 0 || refreshing) {
-  //     getContent({ collection: "Diarys" }).then(setDiarys);
-  //     console.log("데이터 없을떄");
-  //     return;
-  //   }
-  //   const firstDiarys = diarys[0];
-  //   setRefreshing(true);
-
-  //   const newerDiarys = await getNewerContent(firstDiarys.id, "Diarys");
-  //   setRefreshing(false);
-  //   if (newerDiarys.length === 0) {
-  //     return;
-  //   }
-  //   setDiarys(newerDiarys.concat(diarys));
-  // }, [diarys, refreshing]);
 
   useDiaryEventEffect({
     removeDiary,
