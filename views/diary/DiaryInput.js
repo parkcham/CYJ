@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, TextInput, } from "react-native";
+import { StyleSheet, TextInput,Platform } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 import { InputDone } from "../../components/InputAcc";
@@ -33,7 +33,7 @@ const DiaryInput = ({ title, titleOnChange, detail, detailOnChange }) => {
           scrollEnabled={false}
         />
       </KeyboardAwareScrollView>
-      <InputDone />
+      {Platform.OS === 'ios' ? <InputDone /> : null}
     </>
   );
 };

@@ -5,6 +5,7 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
+  Platform
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import RNDateTimePicker from "@react-native-community/datetimepicker";
@@ -111,7 +112,7 @@ const DdayUploadScreen = () => {
           locale="ko"
         />
       </View>
-      <InputDone />
+      {Platform.OS === 'ios' ? <InputDone /> : null}
     </>
   );
 };

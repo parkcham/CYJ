@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import {
   StyleSheet,
+  Platform
 } from "react-native";
 
 import { InputDone } from "../components/InputAcc";
@@ -65,7 +66,7 @@ const FeedUpdateScreen = () => {
           detailOnChange={(e) => onChange("detail", e)}
         />
       </KeyboardAwareScrollView>
-      <InputDone />
+      {Platform.OS === 'ios' ? <InputDone /> : null}
     </>
   );
 };

@@ -8,6 +8,7 @@ import {
   useWindowDimensions,
   TouchableOpacity,
   ImageBackground,
+  Platform
 } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { useNavigation } from "@react-navigation/native";
@@ -162,7 +163,7 @@ const FeedUploadScreen = () => {
           detailOnChange={(e) => onChange("detail", e)}
         />
       </KeyboardAwareScrollView>
-      <InputDone />
+      {Platform.OS === 'ios' ? <InputDone /> : null}
     </>
   );
 };

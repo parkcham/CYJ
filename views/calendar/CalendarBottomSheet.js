@@ -1,5 +1,5 @@
 import React, { useState, forwardRef } from "react";
-import { View, TextInput, Text, StyleSheet } from "react-native";
+import { View, TextInput, Text, StyleSheet ,Platform} from "react-native";
 import { format } from "date-fns";
 import ko from "date-fns/locale/ko";
 
@@ -63,11 +63,11 @@ const CalendarBottomSheet = forwardRef(
                 style={styles.detail}
               />
             </View>
-            <InputDatePicker
+            {Platform.OS === 'ios'?<InputDatePicker
               date={date}
               onChange={onChange}
               onPress={createSchedule}
-            />
+            /> : null}
           </>
         }
       >
