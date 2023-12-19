@@ -7,12 +7,13 @@ import {
 import useDiaryEventEffect from "./useDiaryEventEffect";
 
 export default function useDiaryScreen() {
+  const limit = 10
   const [diarys, setDiarys] = useState([]);
   const [noMoreDiary, setNoMoreDiary] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
-    getDiary(10)    
+    getDiary(limit)    
   }, []);
 
   const removeDiary = useCallback(
@@ -51,14 +52,13 @@ export default function useDiaryScreen() {
   },[diarys,refreshing])
 
   const onEndReached = async () => {
-    console.log("onEndReached");
-    if (noMoreDiary || !diarys || diarys.length < 12) {
+    if (noMoreDiary || !diarys || diarys.length < limit) {
       return;
     }
     const lastDiary = diarys[diarys.length - 1];
     const olderDiarys = await getOlderContent(lastDiary.id, "Diarys");
 
-    if (olderDiarys.length < 12) {
+    if (olderDiarys.length < limit) {
       setNoMoreDiary(true);
     }
     setDiarys(diarys.concat(olderDiarys));

@@ -8,7 +8,6 @@ import {
   View,
   Text,
   ImageBackground,
-  TouchableOpacity,
 } from "react-native";
 const HEADER_MAX_HEIGHT = 250;
 const HEADER_MIN_HEIGHT = 100;
@@ -40,7 +39,6 @@ const DdayHeader = ({ scrollY, day }) => {
     outputRange: ["#545454", "pink"],
     extrapolate: "clamp",
   });
-
   return (
     <Animated.View
       style={{

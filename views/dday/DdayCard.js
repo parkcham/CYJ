@@ -32,9 +32,9 @@ const DdayCard = ({ detail, id, selectedDate, conditional, emoji }) => {
       return <Text style={styles.futureDday}>D{day}</Text>;
     }
     if (day === 0) {
-      return <Text style={styles.futureday}>D·day</Text>;
+      return <Text style={styles.futureDay}>D·day</Text>;
     }
-    return <Text style={styles.futureday}>지남 !</Text>;
+    return <Text style={styles.futureDay}>지남 !</Text>;
   };
 
   return (
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: "pink",
   },
-  futureday: {
+  futureDay: {
     fontSize: 24,
     color: "#FF1B00",
   },

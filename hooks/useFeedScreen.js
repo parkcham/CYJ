@@ -4,17 +4,17 @@ import { getContent, getOlderContent,getNewerContent } from "../lib/CommonFuncti
 import useFeedEventEffect from "./useFeedEventEffect";
 
 export default function useFeedScreen() {
+  const limit = 2
   const [feeds, setFeeds] = useState([]);
   const [noMoreFeed, setNoMoreFeed] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
   
   useEffect(() => {
-    getFeed(2)
+    getFeed(limit)
   }, []);
 
   const getFeed= (limit) =>{
     getContent({ collection: "Feeds" ,limit:limit}).then(setFeeds);
-    console.log("뭘 가져와")
   }
   const removeFeed = useCallback( id =>{ 
     setFeeds(feeds.filter(feed => feed.id !==id ))
@@ -36,14 +36,14 @@ export default function useFeedScreen() {
   );
   const onEndReached = async () => {
     console.log("onEndReached");
-    if (noMoreFeed || !feeds || feeds.length < 2) {
+    if (noMoreFeed || !feeds || feeds.length < limit) {
 
       return;
     }
     const lastFeed = feeds[feeds.length - 1];
-    const olderFeeds = await getOlderContent(lastFeed.id, "Feeds",2);
+    const olderFeeds = await getOlderContent(lastFeed.id, "Feeds",limit);
 
-    if (olderFeeds.length <  2) {
+    if (olderFeeds.length < limit) {
       setNoMoreFeed(true);
     }
     setFeeds(feeds.concat(olderFeeds));
@@ -66,24 +66,6 @@ export default function useFeedScreen() {
     const newerFeeds = await getNewerContent(firstFeeds.id, "Feeds");
     setFeeds(newerFeeds.concat(feeds));
   },[feeds,refreshing])
-  // const onRefresh = useCallback(async () => {
-  //   console.log("refresh")
-  //   if (!feeds || feeds.length === 0 || refreshing) {
-  //     getContent({ collection: "Feeds" }).then(setFeeds);
-  //     console.log("데이터 없을떄")
-  //     return;
-  //   }
-  //   const firstFeeds = feeds[0];
-  //   setRefreshing(true);
-
-  //   const newerFeeds = await getNewerContent(firstFeeds.id, "Feeds");
-  //   setRefreshing(false);
-  //   if (newerFeeds.length === 0) {
-  //     return;
-  //   }
-  //   setFeeds(newerFeeds.concat(feeds));
-  // }, [feeds, refreshing]);
-
 
   useFeedEventEffect({
     removeFeed,

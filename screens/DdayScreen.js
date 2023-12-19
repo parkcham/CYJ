@@ -5,6 +5,8 @@ import {
   View,
   StatusBar,
   RefreshControl,
+  Platform,
+  Text
 } from "react-native";
 
 import {
@@ -15,7 +17,6 @@ import {
 import DdayCard from "../views/dday/DdayCard";
 import useDdayEventEffect from "./../hooks/useDdayEventEffect";
 import DdayHeader from "../views/dday/DdayHeader";
-
 const DdayScreen = () => {
   const [day, setDay] = useState([]);
   useEffect(() => {
@@ -84,6 +85,7 @@ const DdayScreen = () => {
     <View style={styles.container}>
     <View style={styles.rootContainer}>
         <DdayHeader day={day} scrollY={scrollY} />
+
         <Animated.FlatList
           data={day}
           renderItem={renderItem}
