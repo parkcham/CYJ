@@ -60,6 +60,7 @@ const DdayUploadScreen = () => {
     };
     createContent({ collection: "Ddays", content: data });
     events.emit("addDday");
+    navigation.goBack()
   };
 
   const onEmojiSelected = (emojiObject) => {

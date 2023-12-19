@@ -2,12 +2,6 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import { useEffect, useState } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import {
-  View,
-  ImageBackground,
-  FlatList,
-  Text,
-  TouchableOpacity,
-  useWindowDimensions,
   StyleSheet,
 } from "react-native";
 

@@ -1,6 +1,4 @@
 import React from "react";
-import { AntDesign, Ionicons } from "@expo/vector-icons";
-import format from "date-fns/format";
 
 import {
   Animated,
@@ -13,11 +11,6 @@ const HEADER_MAX_HEIGHT = 250;
 const HEADER_MIN_HEIGHT = 100;
 
 const DdayHeader = ({ scrollY, day }) => {
-  const setDate = new Date("2023-05-29 00:00:00");
-  const now = new Date();
-  const dis = new Date(`${format(now, "yyyy-MM-dd")} 00:00:00`) - setDate;
-  const sday = Math.ceil(dis / (1000 * 60 * 60 * 24));
-
   const headerHeight = scrollY.interpolate({
     inputRange: [0, HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT],
     outputRange: [HEADER_MAX_HEIGHT, HEADER_MIN_HEIGHT],
@@ -49,11 +42,6 @@ const DdayHeader = ({ scrollY, day }) => {
         style={styles.image}
         source={require("../../assets/test.jpg")}
       >
-        <View style={styles.dateView}>
-          <AntDesign name="heart" size={24} color="#FF4848" />
-          <Text style={styles.date}>{format(setDate, "yyyy.MM.dd")}</Text>
-        </View>
-        <Animated.Text style={styles.day}>{sday + 1}일</Animated.Text>
         <Animated.View
           style={{
             height: "100%",
@@ -65,7 +53,7 @@ const DdayHeader = ({ scrollY, day }) => {
             <Animated.Text
               style={{
                 fontSize: day.length > 5 ? daySize : 28,
-                color: day.length > 5 ? dayColor : "white",
+                color: day.length > 5 ? dayColor : "#545454",
                 padding: 10,
                 left: 0,
               }}

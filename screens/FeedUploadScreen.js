@@ -10,7 +10,7 @@ import {
   ImageBackground,
 } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import * as ImagePicker from "expo-image-picker";
 
 import LoadingSpinner from "../components/LoadingSpinner";
