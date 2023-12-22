@@ -11,9 +11,13 @@
 - [각 기능 별 로직](https://github.com/parkcham/CYJ/wiki/CYJ)
 ## ✅ Application 작동 영상
  
+
+
+
+
 <div align="center" padding=10>
  
-<video src="https://github.com/parkcham/CYJ/assets/108769833/dfbabb82-f428-466c-80e5-f68ee0c7f74b"/>
+<video src="https://github.com/parkcham/CYJ/assets/108769833/1cbe233d-ea7a-4e06-a941-280e02caa424"/>
 
 </div>
   
