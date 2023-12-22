@@ -8,8 +8,8 @@
 <img src="https://img.shields.io/badge/firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white"> <img src="https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=Expo&logoColor=white">
 <img src="https://img.shields.io/badge/visualstudiocode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white">
 ## 주요 기능
-- 각 기능 별 로직
-https://github.com/parkcham/CYJ.wiki.git
+- [각 기능 별 로직](http://www.naver.com/](https://github.com/parkcham/CYJ.wiki.git)
+
 <div align="center" >
 <video style="border: 0" src="https://github.com/parkcham/CYJ/assets/108769833/a443dd64-1c6e-4190-a6fd-f963e9779e87)https://github.com/parkcham/CYJ/assets/108769833/a443dd64-1c6e-4190-a6fd-f963e9779e87"/>
 </div>
