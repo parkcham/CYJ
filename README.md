@@ -12,13 +12,10 @@
 ## ✅ Application 작동 영상
  
 
-
-
-
-<div align="center" padding=10>
- 
-<video src="https://github.com/parkcham/CYJ/assets/108769833/1cbe233d-ea7a-4e06-a941-280e02caa424"/>
-
+<div align="center" border="0">
+ <kbd>
+<video border="0" src="https://github.com/parkcham/CYJ/assets/108769833/1cbe233d-ea7a-4e06-a941-280e02caa424"/>
+</kbd>
 </div>
   
 
